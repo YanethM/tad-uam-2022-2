@@ -15,7 +15,7 @@ https://stackabuse.com/search-algorithms-in-python/
 ```diff
 - I CORTE 
 ```
-1. Especificación de Estructura de Datos
+1. Especificación de Estructura de Datos: https://www.geeksforgeeks.org/python-data-types/
 2. Complejidad en tiempo | Análisis de complejidad
 3. Algoritmos de ordenamiento
    - Burbuja | Inserción | Selección | Mezcla | Rápido | Radix o base
