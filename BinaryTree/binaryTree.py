@@ -4,9 +4,11 @@ class binary_search_tree:
             self.value = value
             self.left_branch = None
             self.rigth_branch = None
+            
     def __init__(self):
         self.root = None
         self.length = None
+        
     def insert(self, value):
         new_node = self.Node(value)
         if self.root == None:
@@ -44,6 +46,16 @@ class binary_search_tree:
                     return tree_route(value, node.rigth_branch)
         node_find = tree_route(value, self.root)
         return print(node_find)
+
+    '''
+    Mostrar arreglo
+        Condiciones:
+        1. El nodo no tenga hijos
+        2. El nodo tiene 1 hijo
+        3. El nodo tiene 2 hijos puede utilizar cualquiera de las dos alternativas:
+            a. Buscar el nodo de mayor valor en el subárbol de la izquierda, es decir, el que se encuentra más a la derecha
+            b. Buscar el nodo de menor valor en el subárbol de la derecha, es decir, el que se encuentra más a la izquierda
+    '''
     def delete(self, value):
         def tree_route(value, node, previous_node):
             if value == node.value:
@@ -93,15 +105,16 @@ class binary_search_tree:
                     node = None
             elif value < node.value:
                 if node.left_branch == None:
-                    return "No existe el elemento buscado"
+                    print(">>>> No se encontro el nodo buscado <<<<")
                 else:
                     return tree_route(value, node.left_branch, node)
             else:
                 if node.rigth_branch == None:
-                    return "No existe el elemento buscado"
+                    print(">>>> No se encontro el nodo buscado <<<<")
                 else:
                     return tree_route(value, node.rigth_branch, node)
         tree_route(value, self.root, self.root)
+
     def preorder(self):
         contenedor = []
         def tree_route(node):
@@ -145,5 +158,3 @@ class binary_search_tree:
                 contenedor_2.append(node.rigth_branch.value)
             contenedor_1.pop(0)
         return print(contenedor_2)
-
-bst = binary_search_tree()
